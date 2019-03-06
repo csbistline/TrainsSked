@@ -45,6 +45,11 @@ $("#add-train-btn").on("click", function (event) {
 // add row to sked table from database whenver updated
 trainsked.ref().on("child_added", function (snap) {
     // retrieve values
+
+    console.log(snap);
+    console.log(snap.val());
+    console.log(snap.val().name);
+    
     var trainNameSnap = snap.val().name;
     var trainDestinationSnap = snap.val().destination;
     var trainStartSnap = snap.val().start;
@@ -67,7 +72,10 @@ trainsked.ref().on("child_added", function (snap) {
         $("<td>").text(tMinutesTillTrain)
     );
 
-      // Append the new row to the table
-  $("#train-sked > tbody").append(trainRow);
+    // Append the new row to the table
+    $("#train-sked > tbody").append(trainRow);
+
+    // update the clock
+    $("#clock").text("Current Time: " + moment().format("h:mm A"))
 
 });
