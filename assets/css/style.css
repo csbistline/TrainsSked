@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700,900');
+
+body {
+    font-family: 'Titillium Web', sans-serif; 
+}
+
+#train-sked th,
+td {
+    display: inline-block;
+    width: 20%;
+}
+
+.jumbotron {
+    color: #ffffff;
+}
