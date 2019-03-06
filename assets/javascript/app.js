@@ -1,4 +1,7 @@
-// Initialize Firebase
+// ==================================
+// INITIALIZE FIREBASE
+// ==================================
+
 var config = {
     apiKey: "AIzaSyAvpokNmaDpN5q8WziieQtRkKskz4CePmA",
     authDomain: "trainsked-b75cb.firebaseapp.com",
@@ -8,12 +11,16 @@ var config = {
     messagingSenderId: "239289413591"
 };
 firebase.initializeApp(config);
-
 // shortcut to database
 var trainsked = firebase.database();
 
-// add train button
-$("#add-train-btn").on("click", function (event) {
+// ==================================
+// FUNCTIONS
+// ==================================
+
+function addTrain(event) {
+
+    // prevent submit action
     event.preventDefault();
 
     // get user input
@@ -40,16 +47,11 @@ $("#add-train-btn").on("click", function (event) {
     $("#destination-input").val("");
     $("#first-input").val("");
     $("#frequency-input").val("");
-});
+};
 
-// add row to sked table from database whenver updated
-trainsked.ref().on("child_added", function (snap) {
+function updateSked(snap) {
+
     // retrieve values
-
-    console.log(snap);
-    console.log(snap.val());
-    console.log(snap.val().name);
-    
     var trainNameSnap = snap.val().name;
     var trainDestinationSnap = snap.val().destination;
     var trainStartSnap = snap.val().start;
@@ -77,5 +79,25 @@ trainsked.ref().on("child_added", function (snap) {
 
     // update the clock
     $("#clock").text("Current Time: " + moment().format("h:mm A"))
+};
 
-});
+// refreshes train sked
+function refreshSked() {
+    $("#train-sked > tbody").empty();
+    trainsked.ref().on("child_added", updateSked);
+};
+
+// ==================================
+// LISTENERS
+// ==================================
+
+// add train button
+$("#add-train-btn").on("click", addTrain);
+
+// add row to sked table from database whenver updated
+trainsked.ref().on("child_added", updateSked);
+
+// update once per minute
+setInterval(refreshSked, 60000);
+
+
