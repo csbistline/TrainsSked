@@ -18,10 +18,8 @@
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.js"
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-
     <!-- Firebase Reference -->
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-
     <!-- Moment.js Reference -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 
@@ -35,7 +33,7 @@
 
         <!-- Jumbotron -->
         <div class="jumbotron bg-primary">
-            <h1 class="text-center font-weight-bold">Funkytown Train Schedule</h1>
+            <h1 class="text-center font-weight-bold"><i class="fas fa-train"></i> Funkytown Train Schedule <i class="fas fa-train"></i></h1>
             <h3 class="text-center font-italic">"Gotta make a move to a town that's right for me!"</h3>
         </div>
 
@@ -54,7 +52,7 @@
                                     <th scope="col">Destination</th>
                                     <th scope="col">Frequency (min)</th>
                                     <th scope="col">Next Arrival</th>
-                                    <th scope="col">Minutes Away</th>
+                                    <th scope="col">Minutes Away</th> 
                                 </tr>
                             </thead>
                             <tbody>
@@ -90,7 +88,7 @@
                                 <label for="frequency-input">Frequency (min)</label>
                                 <input class="form-control" id="frequency-input" placeholder="25" type="text">
                             </div>
-                            <button class="btn btn-primary" id="add-train-btn">Submit</button>
+                            <button class="btn btn-primary btn-block" id="add-train-btn">Submit</button>
                         </form>
 
                     </div>

@@ -1,5 +1,5 @@
 // ==================================
-// INITIALIZE FIREBASE
+// INITIALIZE FIREBASE 
 // ==================================
 
 var config = {
@@ -40,7 +40,7 @@ function addTrain(event) {
     // push new train to firebase
     trainsked.ref().push(newTrain);
 
-    alert("Train schedule added")
+    alert("Train schedule added");
 
     // clear form
     $("#train-name-input").val("");
@@ -78,7 +78,7 @@ function updateSked(snap) {
     $("#train-sked > tbody").append(trainRow);
 
     // update the clock
-    $("#clock").text("Current Time: " + moment().format("h:mm A"))
+    $("#clock").text("Current Time: " + moment().format("h:mm A"));
 };
 
 // refreshes train sked
@@ -99,5 +99,3 @@ trainsked.ref().on("child_added", updateSked);
 
 // update once per minute
 setInterval(refreshSked, 60000);
-
-
