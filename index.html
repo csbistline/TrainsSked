@@ -19,7 +19,18 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <!-- Firebase Reference -->
-    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script> -->
+    
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase-app.js"></script>
+
+    <!-- Add additional services that you want to use -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase-auth.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase-database.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase-functions.js"></script> -->
+
     <!-- Moment.js Reference -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 
@@ -33,7 +44,8 @@
 
         <!-- Jumbotron -->
         <div class="jumbotron bg-primary">
-            <h1 class="text-center font-weight-bold"><i class="fas fa-train"></i> Funkytown Train Schedule <i class="fas fa-train"></i></h1>
+            <h1 class="text-center font-weight-bold"><i class="fas fa-train"></i> Funkytown Train Schedule <i
+                    class="fas fa-train"></i></h1>
             <h3 class="text-center font-italic">"Gotta make a move to a town that's right for me!"</h3>
         </div>
 
@@ -43,7 +55,8 @@
 
                 <!-- Current trains-->
                 <div class="card mb-4">
-                    <div class="card-header font-weight-bold">Current Train Schedule<span id="clock" class="text-right float-right"></span></div>
+                    <div class="card-header font-weight-bold">Current Train Schedule<span id="clock"
+                            class="text-right float-right"></span></div>
                     <div class="card-body">
                         <table class="table table-sm table-hover" id='train-sked'>
                             <thead>
@@ -52,7 +65,7 @@
                                     <th scope="col">Destination</th>
                                     <th scope="col">Frequency (min)</th>
                                     <th scope="col">Next Arrival</th>
-                                    <th scope="col">Minutes Away</th> 
+                                    <th scope="col">Minutes Away</th>
                                 </tr>
                             </thead>
                             <tbody>
